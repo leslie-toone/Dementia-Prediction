@@ -1,0 +1,60 @@
+#read in the rpart library which is needed for CART
+library(rpart)
+
+#Read in data for no,mild,moderate,and severe dementia types
+
+Mild_read.csv("Mild/MildADandNonCase.csv", header=TRUE, dec=".",skip=0,na.strings="NA", sep=",")
+Moderate_read.csv("Moderate/ModADandNonCase.csv", header=TRUE, dec=".",skip=0,na.strings="NA", sep=",")
+Severe_read.csv("Severe/SevADandNonCase.csv", header=TRUE, dec=".",skip=0,na.strings="NA", sep=",")
+Nodem_read.csv("NoDem/NoDemADandNonCase.csv", header=TRUE, dec=".",skip=0,na.strings="NA", sep=",")
+#10
+
+for (i in 1:nrow(Moderate)){
+	if (identical(all.equal(Moderate$DEMTYPE[i],1),TRUE)) Moderate$DEMTYPE[i]=2}
+for (i in 1:nrow(Severe)){
+	if (identical(all.equal(Severe$DEMTYPE[i],1),TRUE)) Severe$DEMTYPE[i]=3}
+
+#combind demented and non-demented
+yesno_(rbind(Mild,Moderate,Severe,Nodem))
+
+for (i in 1:nrow(yesno)){
+
+	#23
+	#Eliminate missing values indicated by 99,999
+	if (identical(all.equal(yesno$C1TFL[i],99),TRUE)) yesno$C1TFL[i]_NA
+	if (identical(all.equal(yesno$C1TBN[i],99),TRUE)) yesno$C1TBN[i]_NA
+	if (identical(all.equal(yesno$C1TMM[i],99),TRUE)) yesno$C1TMM[i]_NA
+	if (identical(all.equal(yesno$C1TWL1[i],99),TRUE)) yesno$C1TWL1[i]_NA
+	if (identical(all.equal(yesno$C1TWL2[i],99),TRUE)) yesno$C1TWL2[i]_NA
+	if (identical(all.equal(yesno$C1TWL3[i],99),TRUE)) yesno$C1TWL3[i]_NA
+	if (identical(all.equal(yesno$C1TWL[i],99),TRUE)) yesno$C1TWL[i]_NA
+	if (identical(all.equal(yesno$C1TPX[i],99),TRUE)) yesno$C1TPX[i]_NA
+	if (identical(all.equal(yesno$C1TWLRC[i],99),TRUE)) yesno$C1TWLRC[i]_NA
+	if (identical(all.equal(yesno$C1WLRC.P[i],999),TRUE)) yesno$C1WLRC.P[i]_NA
+	if (identical(all.equal(yesno$C1TPXRC[i],99),TRUE)) yesno$C1TPXRC[i]_NA
+	if (identical(all.equal(yesno$C1PXRC.P[i],999),TRUE)) yesno$C1PXRC.P[i]_NA
+	if (identical(all.equal(yesno$C1TTMAT[i],999),TRUE)) yesno$C1TTMAT[i]_NA
+	if (identical(all.equal(yesno$C1TTMAER[i],999),TRUE)) yesno$C1TTMAER[i]_NA
+	#40	
+	if (identical(all.equal(yesno$C1TTMBT[i],999),TRUE)) yesno$C1TTMBT[i]_NA
+	if (identical(all.equal(yesno$C1TTMBER[i],999),TRUE)) yesno$C1TTMBER[i]_NA
+	if (identical(all.equal(yesno$C1TWM[i],999),TRUE)) yesno$C1TWM[i]_NA
+	if (identical(all.equal(yesno$C1TBV[i],99),TRUE)) yesno$C1TBV[i]_NA
+	if (identical(all.equal(yesno$C1TBVER[i],99),TRUE)) yesno$C1TBVER[i]_NA
+	if (identical(all.equal(yesno$C1TCOW[i],999),TRUE)) yesno$C1TCOW[i]_NA
+	if (identical(all.equal(yesno$C1TSDM[i],999),TRUE)) yesno$C1TSDM[i]_NA
+	if (identical(all.equal(yesno$C1TSDMER[i],999),TRUE)) yesno$C1TSDMER[i]_NA
+	if (identical(all.equal(yesno$C1TWMRC[i],999),TRUE)) yesno$C1TWMRC[i]_NA
+	if (identical(all.equal(yesno$C1WMRC.P[i],999),TRUE)) yesno$C1WMRC.P[i]_NA
+	if (identical(all.equal(yesno$C1TSH[i],999),TRUE)) yesno$C1TSH[i]_NA
+	
+	if (is.na(yesno$DEMTYPE[i]) & (identical(all.equal(yesno$C1DXDX1[i],7),TRUE)|
+	identical(all.equal(yesno$C1DXDX1[i],129),TRUE))) yesno$DEMTYPE[i]=0
+	
+	else if (is.na(yesno$DEMTYPE[i]) & (identical(all.equal(yesno$X2DXDX1[i],129),TRUE)|
+	identical(all.equal(yesno$X1DXDX1[i],129),TRUE))) yesno$DEMTYPE[i]=0	
+	
+}
+
+#save complete data set
+write.table(yesno, file="data.txt", dec=".",na="NA", sep=",", row.names=TRUE, col.names=TRUE)

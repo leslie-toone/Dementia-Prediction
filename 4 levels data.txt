@@ -1,0 +1,20 @@
+#read in the rpart library which is needed for CART
+library(rpart)
+
+#Read in data for no,mild,moderate,and severe dementia types
+
+
+#Read in data for no,mild,moderate,and severe dementia types
+
+yesno_read.table("data.txt", header=TRUE, dec=".",skip=0,na.strings="NA", sep=",")
+yyesno_yesno$DEMTYPE
+#
+
+#Randomly assign data to training (90%) and test sets(10%) with corresponding outcome (y) values
+	s_sample(1:nrow(yesno),nrow(yesno),replace=F)
+	demno2_yesno[s,]
+	ydemno2_yyesno[s]
+	xtrain_demno2[1:round(.90*nrow(demno2),0),]
+	xtest_demno2[(nrow(xtrain)+1):nrow(demno2),]
+	ytrain_ydemno2[1:round(.90*length(ydemno2),0)]
+	ytest_ydemno2[(length(ytrain)+1):length(ydemno2)]

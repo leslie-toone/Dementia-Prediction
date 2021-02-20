@@ -1,0 +1,162 @@
+specificity_c(94.1, 98.2, 96.3,93.9,98.4,99,100,97.7)
+sensitivity_c(78.6, 100, 100, 98.9, 88.9,83.8,100,100)
+
+
+errorname_c("CART","Bagging","Adaboost","Random Forest","LDA (all vars)", 
+"LDA (forest vars)", "Logistic (all vars)","Logistic (forest vars)")
+
+error_data.frame(cbind(specificity, sensitivity), row.names=errorname)
+
+
+plot(specificity, sensitivity, xlab="Specificity", ylab="Sensitivity",xlim=c(90,104),ylim=c(70,102), pch=16)
+
+chw_par()$cxy[1]
+chh_par()$cxy[2]
+error1_error[1,]
+error2_error[2,]
+error3_error[4,]
+error4_error[5:6,]
+error5_error[7,]
+error6_error[8,]
+error7_error[3,]
+
+
+
+text(x=specificity[1]-.75*chw,,y=sensitivity[1],labels=row.names(error1), adj=1)
+text(x=specificity[2],y=sensitivity[2]-.75*chh,labels=row.names(error2), adj=1)
+text(x=specificity[4]-.75*chw,y=sensitivity[4],labels=row.names(error3), adj=1)
+text(x=specificity[5:6]-.75*chw,y=sensitivity[5:6],labels=row.names(error4), adj=1)
+text(x=specificity[7]+chw,y=sensitivity[7:8],labels=row.names(error5), adj=0)
+text(x=specificity[8],y=sensitivity[7:8]+.75*chh,labels=row.names(error6), adj=0)
+text(x=specificity[3]-.75*chw,y=sensitivity[3],labels=row.names(error7), adj=1)
+title(main='Specificity vs. Sensitivity')
+
+x11()
+
+specificity_c(90.4,98,98,99.6,99,92.6,97.7)
+sensitivity_c(76.9,81.3,68.8,67.2,66,77.6,64.7)
+
+errorname_c("CART","Bagging","Adaboost","Random Forest","LDA (all vars)", 
+"LDA (forest vars)", "Polytomous Logistic (forest vars)")
+
+error_data.frame(cbind(specificity, sensitivity), row.names=errorname)
+
+
+plot(specificity, sensitivity, xlab="Specificity", ylab="Sensitivity",xlim=c(90,104),ylim=c(60,85), pch=16)
+
+chw_par()$cxy[1]
+chh_par()$cxy[2]
+error1_error[1,]
+error2_error[2,]
+error3_error[4,]
+error4_error[5:6,]
+error5_error[7,]
+error7_error[3,]
+
+
+
+text(x=specificity[1]+chw,,y=sensitivity[1],labels=row.names(error1), adj=0)
+text(x=specificity[2]+chw,y=sensitivity[2],labels=row.names(error2), adj=0)
+text(x=specificity[4]+chw,y=sensitivity[4],labels=row.names(error3), adj=0)
+text(x=specificity[5:6]+chw,y=sensitivity[5:6],labels=row.names(error4), adj=0)
+text(x=specificity[7]+chw,y=sensitivity[7:8],labels=row.names(error5), adj=0)
+text(x=specificity[3]+chw,y=sensitivity[3],labels=row.names(error7), adj=0)
+title(main='Specificity vs. Sensitivity')
+
+x11()
+
+specificity_c(90.4,98,98,99.6,99,92.6,97.7)
+sensitivity_c(62.5, 83.3, 80, 71.2, 73.2,81.3,50)
+
+errorname_c("CART","Bagging","Adaboost","Random Forest","LDA (all vars)", 
+"LDA (forest vars)", "Polytomous Logistic (forest vars)")
+
+error_data.frame(cbind(specificity, sensitivity), row.names=errorname)
+
+
+plot(specificity, sensitivity, xlab="Specificity", ylab="Sensitivity",xlim=c(90,104),ylim=c(45,85), pch=16)
+
+chw_par()$cxy[1]
+chh_par()$cxy[2]
+error1_error[1,]
+error2_error[2,]
+error3_error[4,]
+error4_error[5:6,]
+error5_error[7,]
+error7_error[3,]
+
+
+
+text(x=specificity[1]+chw,,y=sensitivity[1],labels=row.names(error1), adj=0)
+text(x=specificity[2]+chw,y=sensitivity[2],labels=row.names(error2), adj=0)
+text(x=specificity[4]+chw,y=sensitivity[4],labels=row.names(error3), adj=0)
+text(x=specificity[5:6]+chw,y=sensitivity[5:6],labels=row.names(error4), adj=0)
+text(x=specificity[7]+chw,y=sensitivity[7:8],labels=row.names(error5), adj=0)
+text(x=specificity[3]+chw,y=sensitivity[3],labels=row.names(error7), adj=0)
+title(main='Specificity vs. Mild Sensitivity')
+x11()
+
+specificity_c(90.4,98,98,99.6,99,92.6,97.7)
+sensitivity_c(100,33.3,33.3,37.2,37.5,55.9,50)
+
+errorname_c("CART","Bagging","Adaboost","Random Forest","LDA (all vars)", 
+"LDA (forest vars)", "Polytomous Logistic (forest vars)")
+
+error_data.frame(cbind(specificity, sensitivity), row.names=errorname)
+
+
+plot(specificity, sensitivity, xlab="Specificity", ylab="Sensitivity",xlim=c(85,104),ylim=c(30,104), pch=16)
+
+chw_par()$cxy[1]
+chh_par()$cxy[2]
+error1_error[1,]
+error2_error[2,]
+error3_error[4,]
+error4_error[5:6,]
+error5_error[7,]
+error7_error[3,]
+
+
+
+text(x=specificity[1]+chw,,y=sensitivity[1],labels=row.names(error1), adj=0)
+text(x=specificity[2]+chw,y=sensitivity[2]-.75*chh,labels=row.names(error2), adj=0)
+text(x=specificity[4]+chw,y=sensitivity[4],labels=row.names(error3), adj=0)
+text(x=specificity[5:6]-.75*chw,y=sensitivity[5:6],labels=row.names(error4), adj=1)
+text(x=specificity[7]-.75*chw,y=sensitivity[7:8],labels=row.names(error5), adj=1)
+text(x=specificity[3]+chw,y=sensitivity[3],labels=row.names(error7), adj=0)
+title(main='Specificity vs. Moderate Sensitivity')
+
+x11()
+
+specificity_c(90.4,98,98,99.6,99,92.6,97.7)
+sensitivity_c(100,100,100,84.1,0,84.9,100)
+
+errorname_c("CART","Bagging","Adaboost","Random Forest","LDA (all vars)", 
+"LDA (forest vars)", "Polytomous Logistic (forest vars)")
+
+error_data.frame(cbind(specificity, sensitivity), row.names=errorname)
+
+
+plot(specificity, sensitivity, xlab="Specificity", ylab="Sensitivity",xlim=c(90,104),ylim=c(0,104), pch=16)
+
+chw_par()$cxy[1]
+chh_par()$cxy[2]
+error1_error[1,]
+error2_error[2,]
+error3_error[4,]
+error4_error[5:6,]
+error5_error[7,]
+error7_error[3,]
+
+
+
+text(x=specificity[1]+chw,,y=sensitivity[1],labels=row.names(error1), adj=0)
+text(x=specificity[2]+chw,y=sensitivity[2]-.75*chh,labels=row.names(error2), adj=0)
+text(x=specificity[4]+chw,y=sensitivity[4],labels=row.names(error3), adj=0)
+text(x=specificity[5:6]+chw,y=sensitivity[5:6],labels=row.names(error4), adj=0)
+text(x=specificity[7]-.60*chw,y=sensitivity[7]+.75*chh,labels=row.names(error5), adj=1)
+text(x=specificity[3]+chw,y=sensitivity[3],labels=row.names(error7), adj=0)
+title(main='Specificity vs. Severe Sensitivity')
+
+
+
